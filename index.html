@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foysal Fahim - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <style>
+    :root {
+      --bg: #0B0B0B;
+      --green: #00FF9F;
+      --button: #00C46A;
+      --white: #FFFFFF;
+      --gray: #E0E0E0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--gray);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav h1 {
+      color: var(--green);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    header {
+      text-align: center;
+      padding: 80px 10% 40px;
+    }
+    header h2 {
+      color: var(--green);
+      font-size: 2.5rem;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin: 10px 0;
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 220px;
+      height: 300px;
+      margin: 40px auto;
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .flip-card-front {
+      background: linear-gradient(135deg, #00FFD5, #00FFB2, #1AFFA3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .flip-card-back {
+      background: #1A1A1A;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    .btn {
+      background-color: var(--button);
+      color: var(--bg);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--button);
+      margin-top: 20px;
+    }
+    section {
+      padding: 60px 10%;
+    }
+    h2.section-title {
+      color: var(--green);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0;
+    }
+    iframe {
+      border-radius: 10px;
+      width: 90%;
+      max-width: 700px;
+      height: 400px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+      font-size: 14px;
+      background-color: #0B0B0B;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Foysal Fahim</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>Full-Stack Developer</h2>
+    <h1>Hello, I'm Fahim</h1>
+    <p>Cybersecurity & AI Enthusiast | Java, MySQL, Web Dev</p>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://via.placeholder.com/220x300" alt="Profile" />
+        </div>
+        <div class="flip-card-back">
+          <h3>Foysal Fahim</h3>
+          <p>CSE Student</p>
+          <p>Email:foysalmahamudfahim507@gmail.com</p>
+          <button class="btn">Let's Connect</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p style="text-align:center">I'm a 2nd year CSE student passionate about Cybersecurity, Full-stack development, and AI. I'm building smart systems using Java, MySQL, and secure technologies.</p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <ul style="max-width:600px; margin:auto">
+      <li>✔️ Employee Management System (Java + MySQL)</li>
+      <li>✔️ NoBroker-inspired House Rental App</li>
+      <li>✔️ DLD Project: Night Light & Motion Sensor</li>
+    </ul>
+  </section>
+
+  <section id="resume">
+    <h2 class="section-title">Video Resume</h2>
+    <div class="video-container">
+      <iframe src="https://youtu.be/HIcQTbYVRb4" title="Video Resume" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required />
+      <input type="email" name="user_email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Foysal Mahamud Fahim. All Rights Reserved.
+  </footer>
+
+  <script>
+    emailjs.init("1O4AGW9-Vu6EjPx0X");
+
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm("service_tbhglpn", "template_hgoa1bv", this)
+        .then(() => {
+          alert("Message sent successfully!");
+        }, (error) => {
+          alert("Failed to send message: " + error.text);
+        });
+    });
+  </script>
+</body>
+</html>
